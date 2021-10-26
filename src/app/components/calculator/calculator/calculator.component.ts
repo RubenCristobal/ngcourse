@@ -107,7 +107,7 @@ export class CalculatorComponent implements OnInit {
 
   }
 
-  handleClick(value: any) {
+  handleClick(value: number | string) {
     if (typeof value === 'number') {
       this.handleNumber(value);
     } else if (typeof value === 'string') {
