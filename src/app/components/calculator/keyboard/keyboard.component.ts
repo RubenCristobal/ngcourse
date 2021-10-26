@@ -16,7 +16,6 @@ export class KeyboardComponent implements OnInit {
 
   handleClick(value: number | string) {
     this.onKeyClick.emit(value);
-    console.log(value);
   }
 
 }
