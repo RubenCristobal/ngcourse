@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label for="">Hero name</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHeroName">
+    <label for="">Hero description</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHeroDescription">
+      <button type="button" class="btn btn-primary mt-2" (click)="addHero()" [disabled]="newHeroName === ''">Add Hero</button>
+  </div>

@@ -8,8 +8,7 @@ import { Hero } from 'src/app/model/hero';
 })
 export class HeroesComponent implements OnInit {
 
-  newHeroName = '';
-  newHeroDescription = '';
+
 
   heroes: Hero[] = [
     new Hero('Superman', 'Clark Kent'),
@@ -23,12 +22,8 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addHero() {
-    if (this.newHeroName !== '') {
-      this.heroes.push(new Hero(this.newHeroName, this.newHeroDescription));
-      this.newHeroName = '';
-      this.newHeroDescription = '';
-    }
+  addHero(hero: Hero) {
+    this.heroes.push(hero);
   }
 
 }
