@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HeroFormComponent } from './components/heroes/hero-form/hero-form.component';
 import { HeroListComponent } from './components/heroes/hero-list/hero-list.component';
 import { CalculatorService } from './services/calculator.service';
+import { HeroesService } from './services/heroes.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { CalculatorService } from './services/calculator.service';
     NgbModule,
     FormsModule
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, HeroesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

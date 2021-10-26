@@ -1,3 +1,6 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let hero of heroList"><strong>{{hero.name}}</strong><br>{{hero.alterEgo}}</li>
+    <li class="list-group-item" *ngFor="let hero of heroList; let i=index">
+        <strong>{{hero.name}}</strong>
+        <br><p>{{hero.alterEgo}}</p>
+        <button type="button" class="btn btn-danger" (click)="removeHero(i)">Remove Hero</button></li>
 </ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/model/hero';
+import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-heroes',
@@ -8,22 +9,17 @@ import { Hero } from 'src/app/model/hero';
 })
 export class HeroesComponent implements OnInit {
 
+  heroes: Hero[] = [];
 
-
-  heroes: Hero[] = [
-    new Hero('Superman', 'Clark Kent'),
-    new Hero('Batman', 'Bruce Wayne'),
-    new Hero('Spiderman', 'Peter Parker'),
-  ];
-
-
-  constructor() { }
+  constructor(private heroService: HeroesService) { 
+    this.heroService.heroes$.subscribe(heroes => this.heroes = [...heroes]);
+  }
 
   ngOnInit(): void {
   }
 
   addHero(hero: Hero) {
-    this.heroes.push(hero);
+    this.heroService.addHero(hero);
   }
 
 }

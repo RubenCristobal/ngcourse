@@ -11,14 +11,14 @@ enum States {
 @Injectable()
 export class CalculatorService {
 
-  display = '';
+  private display = '';
   display$ = new BehaviorSubject<string>(this.display);
 
-  currentState = States.Init;
-  firstFigure = 0;
-  secondFigure = 0;
-  result = 0;
-  operator = '';
+  private currentState = States.Init;
+  private firstFigure = 0;
+  private secondFigure = 0;
+  private result = 0;
+  private operator = '';
 
   constructor() { 
   }
@@ -56,7 +56,7 @@ export class CalculatorService {
     }
   }
 
-  getResult(): number {
+  private getResult(): number {
     switch (this.operator) {
       case '+':
         return this.result = this.firstFigure + this.secondFigure;
