@@ -42,24 +42,9 @@ export class ApodComponent implements OnInit, OnDestroy {
     this.apodService.getApodContent();
   }
 
-  handleDate() {
-    console.log('handleDate');
-    console.log(this.currentDate);
-    // get currentDate as string YYYY-MM-DD
-    const dateString = this.currentDate.year + '-' + this.currentDate.month + '-' + this.currentDate.day;
+  handleDate(dateString: string): void {
     this.apodService.getApodContent(dateString);
     
   }
 
-  // a method that returns youtube video ID from the url
-  getYoutubeID(): string {
-    const url = this.apod.url;
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    const match = url.match(regExp);
-    if (match && match[2].length === 11) {
-      return match[2];
-    } else {
-      return 'error';
-    }
-  }
 }
