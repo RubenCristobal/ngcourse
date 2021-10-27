@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApodService {
 
   API_KEY = 'DEMO_KEY';
@@ -13,9 +11,15 @@ export class ApodService {
 
   constructor(private http: HttpClient) { }
 
-  getApodContent(): void {
-    if (this.apod === undefined) {
-      this.http.get(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}`).subscribe(data => {
+  getApodContent(dateString?: string): void {
+    let url = '';
+    if (!dateString) {
+      url = `https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}`;
+    }else {
+      url = `https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}&date=${dateString}`;
+    }
+    if (this.apod === undefined || this.apod.date !== dateString) {
+      this.http.get(url).subscribe(data => {
         this.apod = data;
         this.apod$.next(this.apod);
         console.log(data);
@@ -24,6 +28,7 @@ export class ApodService {
       }
       );
     }
+
   }
 
   getApod() {
