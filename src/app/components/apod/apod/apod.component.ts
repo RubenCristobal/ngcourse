@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApodService } from 'src/app/services/apod.service';
 
 @Component({
@@ -6,22 +6,25 @@ import { ApodService } from 'src/app/services/apod.service';
   templateUrl: './apod.component.html',
   styleUrls: ['./apod.component.scss']
 })
-export class ApodComponent implements OnInit {
+export class ApodComponent implements OnInit, OnDestroy {
 
   apod: any = {};
 
-  constructor(private apodService: ApodService) { }
+  constructor(private apodService: ApodService) {
+    console.log('Apod Constructor');
 
-  ngOnInit(): void {
-    this.apodService.getApod().subscribe(
-      (data) => {
-        this.apod = data;
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+   }
+  ngOnDestroy(): void {
+    console.log('Apod OnDestroy');
   }
 
+  ngOnInit(): void {
+    console.log('Apod OnInit');
+    this.apodService.apod$.subscribe(
+      (data) => {
+        this.apod = this.apodService.getApod();
+      }
+    );
+    this.apodService.getApodContent();
+  }
 }
