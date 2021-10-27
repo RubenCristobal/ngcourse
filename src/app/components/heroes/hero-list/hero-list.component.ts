@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Hero } from 'src/app/model/hero';
 
 @Component({
@@ -9,6 +9,7 @@ import { Hero } from 'src/app/model/hero';
 export class HeroListComponent implements OnInit {
 
   @Input() heroList: Hero[] = [];
+  @Output() onRemoveHero = new EventEmitter<number>();
 
   constructor() { }
 
@@ -16,7 +17,8 @@ export class HeroListComponent implements OnInit {
   }
 
   removeHero(index: number) {
-    this.heroList.splice(index, 1);
+    // this.heroList.splice(index, 1);
+    this.onRemoveHero.emit(index);
     // TODO: remove hero from server
   }
 

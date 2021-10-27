@@ -12,7 +12,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
   constructor(private heroService: HeroesService) { 
-    this.heroService.heroes$.subscribe(heroes => this.heroes = [...heroes]);
+    this.heroService.heroes$.subscribe(heroes => this.heroes = this.heroService.getHeroes());
   }
 
   ngOnInit(): void {
@@ -20,6 +20,10 @@ export class HeroesComponent implements OnInit {
 
   addHero(hero: Hero) {
     this.heroService.addHero(hero);
+  }
+
+  removeHero(index: number) {
+    this.heroService.removeHero(index);
   }
 
 }
