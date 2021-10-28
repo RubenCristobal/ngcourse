@@ -2,8 +2,17 @@
     <h1 class="display-3">{{apod.title}}</h1>
     <p class="lead">{{apod.date}}</p>
     <hr class="my-2">
-    <img *ngIf="apod.media_type === 'image'" [src]="apod.url" alt="" class="d-block mx-auto mb-3">
-    <youtube-player *ngIf="apod.media_type === 'video'" [videoId]="getYoutubeID()"></youtube-player>
+    <span [ngSwitch]="apod.media_type">
+        <p *ngSwitchCase="'image'">
+            <img [src]="apod.url" alt="" class="d-block mx-auto mb-3">
+        </p>
+        <p *ngSwitchCase="'video'">
+            <youtube-player [videoId]="getYoutubeID()"></youtube-player>
+        </p>
+        <p *ngSwitchDefault>
+            There is an error here
+        </p>
+    </span>
     <p>{{apod.explanation}}</p>
     <p class="lead">
         <a class="btn btn-primary btn-lg" [href]="apod.hdurl" role="button">Download</a>

@@ -12,7 +12,8 @@ export class BeersComponent implements OnInit {
 
   beers: Beer[] = [];
   showBeers: Beer[] = [];
-
+  filterText = '';
+  
   minValue: number = 4;
   maxValue: number = 5;
   options: Options = {
@@ -38,6 +39,7 @@ export class BeersComponent implements OnInit {
   filterBeers() {
     this.showBeers = this.beers.
       filter(beer => beer.abv >= this.minValue && beer.abv <= this.maxValue).
+      filter(beer => beer.name.toLowerCase().startsWith(this.filterText.toLowerCase())).
       sort((a, b) => a.abv - b.abv);
   }
 
@@ -45,6 +47,11 @@ export class BeersComponent implements OnInit {
     console.log(event);
     this.filterBeers();
 
+  }
+
+  handleChangeInput() {
+    console.log(this.filterText);
+    this.filterBeers();
   }
 
 }

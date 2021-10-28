@@ -8,9 +8,9 @@ import { Beer } from '../model/beer';
 })
 export class BeersService {
 
-  beers: Beer[] = [];
-  beers$ = new BehaviorSubject<any[]>(this.beers); 
-  data: any;
+  private beers: Beer[] = [];
+  beers$ = new BehaviorSubject<Beer[]>(this.beers); 
+  private data: any;
 
   constructor(private http: HttpClient) { }
 
@@ -26,13 +26,11 @@ export class BeersService {
     );
   }
 
-  processBeers() {
+  private processBeers() {
     this.data.forEach((beer:any) => {
       this.beers.push(new Beer(beer.name, beer.description, beer.abv, beer.tagline, beer.image_url));
     });
   }
-
-  
 
   anyBeers() {
     return this.beers.length > 0;

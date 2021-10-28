@@ -3,7 +3,7 @@
 <div class="container">
     <div class="form-group">
       <label for="">Name filter</label>
-      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" >
+      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""  (ngModelChange)="handleChangeInput()" [(ngModel)]="filterText">
     </div>
     <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (userChange)="handleChange($event)"></ngx-slider>
     <div class="row mt-4">
