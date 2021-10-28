@@ -20,6 +20,7 @@ import { DateApodComponent } from './components/apod/date-apod/date-apod.compone
 import { ShowApodComponent } from './components/apod/show-apod/show-apod.component';
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { AbvPipe } from './pipes/abv.pipe';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AbvPipe } from './pipes/abv.pipe';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    NgxSliderModule,
   ],
   providers: [CalculatorService, HeroesService, ApodService],
   bootstrap: [AppComponent]

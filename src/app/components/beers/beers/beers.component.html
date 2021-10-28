@@ -1,8 +1,13 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let beer of beers">
+    <div class="form-group">
+      <label for="">Name filter</label>
+      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" >
+    </div>
+    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (userChange)="handleChange($event)"></ngx-slider>
+    <div class="row mt-4">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let beer of showBeers">
             <div class="card h-100">
                 <img class="card-img-top d-block mx-auto mt-2" [src]="beer.image_url" alt="" style="width: 60px">
                 <div class="card-body">
