@@ -18,6 +18,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ApodService } from './services/apod.service';
 import { DateApodComponent } from './components/apod/date-apod/date-apod.component';
 import { ShowApodComponent } from './components/apod/show-apod/show-apod.component';
+import { BeersComponent } from './components/beers/beers/beers.component';
+import { AbvPipe } from './pipes/abv.pipe';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,11 @@ import { ShowApodComponent } from './components/apod/show-apod/show-apod.compone
     HeroListComponent,
     ApodComponent,
     DateApodComponent,
-    ShowApodComponent
+    ShowApodComponent,
+    BeersComponent,
+    AbvPipe
   ],
+  
   imports: [
     BrowserModule,
     NgbModule,

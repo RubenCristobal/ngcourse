@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class ApodService {
 
-  API_KEY = 'DEMO_KEY';
+  API_KEY = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
   private apod: any = undefined;
   apod$ = new BehaviorSubject<string>(this.apod);
 

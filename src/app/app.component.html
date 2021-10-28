@@ -18,6 +18,12 @@
         <app-apod></app-apod>
       </ng-template>
     </li>
+    <li [ngbNavItem]="4">
+      <a ngbNavLink>Beers</a>
+      <ng-template ngbNavContent>
+        <app-beers></app-beers>
+      </ng-template>
+    </li>
   </ul>
   
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
