@@ -7,7 +7,7 @@ import { DisplayComponent } from './components/calculator/display/display.compon
 import { KeyboardComponent } from './components/calculator/keyboard/keyboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroFormComponent } from './components/heroes/hero-form/hero-form.component';
 import { HeroListComponent } from './components/heroes/hero-list/hero-list.component';
 import { CalculatorService } from './services/calculator.service';
@@ -21,6 +21,9 @@ import { ShowApodComponent } from './components/apod/show-apod/show-apod.compone
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { AbvPipe } from './pipes/abv.pipe';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { TemplateFormComponent } from './components/form/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/form/reactive-form/reactive-form.component';
+import { FormComponent } from './components/form/form/form.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +38,17 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     DateApodComponent,
     ShowApodComponent,
     BeersComponent,
-    AbvPipe
+    AbvPipe,
+    TemplateFormComponent,
+    ReactiveFormComponent,
+    FormComponent
   ],
   
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     YouTubePlayerModule,
     NgxSliderModule,

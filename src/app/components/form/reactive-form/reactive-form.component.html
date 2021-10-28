@@ -1,0 +1,12 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="">AlterEgo</label>
+      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" formControlName="alterEgo">
+    </div>
+
+    <button class="btn btn-success" type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
