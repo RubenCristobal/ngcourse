@@ -10,12 +10,21 @@ import { TrivialService } from 'src/app/services/trivial.service';
 export class TrivialComponent implements OnInit {
 
   cards: Card[] = [];
+  score = 0;
 
   constructor(private service: TrivialService) { }
 
   ngOnInit(): void {
     this.service.getTrivial();
     this.service.cards$.subscribe(data => {this.cards = data; });
+  }
+
+  handleAnswer(rightAnswer: boolean) {
+    if (rightAnswer) {
+      this.score += 2;
+    }else {
+      this.score--;
+    }
   }
 
 }

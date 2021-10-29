@@ -1,7 +1,10 @@
 <div class="container">
+    <div class="alert alert-primary" role="alert">
+        <strong>Score: {{score}}</strong>
+    </div>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4 mb-3" *ngFor="let card of cards">
-            <app-card [card]="card" ></app-card>
+            <app-card [card]="card" (onCardAnswered)="handleAnswer($event)"></app-card>
         </div>
     </div>
 
