@@ -1,8 +1,35 @@
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Ng Samples</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active"><a class="nav-link" routerLink="/calculator" routerLinkActive="active">Calculator</a></li>
+      <li class="nav-item active"><a class="nav-link" routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
+      <li class="nav-item active"><a class="nav-link" routerLink="/apod" routerLinkActive="active">Apod</a></li>
+      <li class="nav-item active"><a class="nav-link" routerLink="/beers" routerLinkActive="active">Beers</a></li>
+      <li class="nav-item active"><a class="nav-link" routerLink="/forms" routerLinkActive="active">Forms</a></li>
+      <li class="nav-item active"><a class="nav-link" routerLink="/customers" routerLinkActive="active">Lazy loading</a></li>
+        
+    </ul>
+
+  </div>
+</nav>
+
+<nav>
+  <ul>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
+
+
+<!-- <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li [ngbNavItem]="1">
       <a ngbNavLink>Calculator</a>
       <ng-template ngbNavContent>
-        <app-calculator></app-calculator>
         <app-calculator></app-calculator>
       </ng-template>
     </li>
@@ -35,4 +62,4 @@
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
   
 
-
+ -->

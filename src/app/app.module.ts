@@ -25,6 +25,8 @@ import { TemplateFormComponent } from './components/form/template-form/template-
 import { ReactiveFormComponent } from './components/form/reactive-form/reactive-form.component';
 import { FormComponent } from './components/form/form/form.component';
 import { TypeaheadComponent } from './components/form/typeahead/typeahead.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { TypeaheadComponent } from './components/form/typeahead/typeahead.compon
     TemplateFormComponent,
     ReactiveFormComponent,
     FormComponent,
-    TypeaheadComponent
+    TypeaheadComponent,
+    PageNotFoundComponent
   ],
   
   imports: [
@@ -54,6 +57,7 @@ import { TypeaheadComponent } from './components/form/typeahead/typeahead.compon
     HttpClientModule,
     YouTubePlayerModule,
     NgxSliderModule,
+    AppRoutingModule
   ],
   providers: [CalculatorService, HeroesService, ApodService],
   bootstrap: [AppComponent]
