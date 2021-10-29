@@ -2,6 +2,9 @@ export class Card {
     question = '';
     rightAnswer = '';
     answers: string[] = [];
+    responded = false;
+    correct = false;
+    response = '';
 
     constructor(json?: any) {
         if (json !== undefined) {
