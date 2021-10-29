@@ -27,6 +27,8 @@ import { FormComponent } from './components/form/form/form.component';
 import { TypeaheadComponent } from './components/form/typeahead/typeahead.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TrivialComponent } from './components/trivial/trivial/trivial.component';
+import { CardComponent } from './components/trivial/card/card.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ReactiveFormComponent,
     FormComponent,
     TypeaheadComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TrivialComponent,
+    CardComponent
   ],
   
   imports: [

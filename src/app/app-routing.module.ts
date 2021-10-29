@@ -6,6 +6,7 @@ import { CalculatorComponent } from './components/calculator/calculator/calculat
 import { FormComponent } from './components/form/form/form.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TrivialComponent } from './components/trivial/trivial/trivial.component';
 import { YourGuard } from './guards/your.guard';
 
 const routes: Routes = [
@@ -13,8 +14,9 @@ const routes: Routes = [
     { path: 'heroes', component: HeroesComponent },
     { path: 'apod', component: ApodComponent },
     { path: 'beers', component: BeersComponent },
+    { path: 'trivial', component: TrivialComponent },
     { path: 'forms', component: FormComponent, canActivate: [YourGuard], },
-    { path: '', redirectTo: '/forms', pathMatch: 'full' },
+    { path: '', redirectTo: '/trivial', pathMatch: 'full' },
     { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
     },
     { path: '**', component: PageNotFoundComponent },
