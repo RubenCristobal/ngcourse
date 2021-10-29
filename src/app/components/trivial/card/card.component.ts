@@ -11,7 +11,11 @@ export class CardComponent implements OnInit {
   @Input() card: Card = new Card();
   @Output() onCardAnswered = new EventEmitter<boolean>();
 
-  classArray : string[] = [];
+  classArray : string[] = [
+    'btn btn-primary btn-block',
+    'btn btn-primary btn-block',
+    'btn btn-primary btn-block',
+    'btn btn-primary btn-block'];
 
   constructor() { }
 

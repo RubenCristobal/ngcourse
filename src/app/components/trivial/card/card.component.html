@@ -1,6 +1,6 @@
 <div class="card h-100">
     <div class="card-body">
         <h4 class="card-title" [innerHtml]="card.question"></h4>
-        <button type="button" name="" id="" [class]="getClass(answer)" *ngFor="let answer of card.answers; let i=index" (click)="handleAnswer(answer, i)" [disabled]="card.responded" [innerHtml]="answer"></button>
+        <button type="button" name="" id="" [class]="classArray[i]" *ngFor="let answer of card.answers; let i=index" (click)="handleAnswer(answer, i)" [disabled]="card.responded" [innerHtml]="answer"></button>
     </div>
 </div>

@@ -12,6 +12,11 @@ export class Card {
             this.rightAnswer = json.correct_answer;
             this.answers = json.incorrect_answers;
             this.answers.push(this.rightAnswer);
+            this.shuffle();
         }
+    }
+
+    shuffle() {
+        this.answers.sort(() => Math.random() - 0.5);
     }
 }
