@@ -16,6 +16,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   handleAnswer(answer: string, i: number) {
