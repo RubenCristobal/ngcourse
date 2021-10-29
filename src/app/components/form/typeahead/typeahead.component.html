@@ -1,0 +1,4 @@
+<div *ngIf="!countriesLoaded" class="alert alert-primary" role="alert">
+    <strong>Loading...</strong>
+</div>
+<input *ngIf="countriesLoaded" id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>

@@ -24,6 +24,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { TemplateFormComponent } from './components/form/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/form/reactive-form/reactive-form.component';
 import { FormComponent } from './components/form/form/form.component';
+import { TypeaheadComponent } from './components/form/typeahead/typeahead.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FormComponent } from './components/form/form/form.component';
     AbvPipe,
     TemplateFormComponent,
     ReactiveFormComponent,
-    FormComponent
+    FormComponent,
+    TypeaheadComponent
   ],
   
   imports: [
